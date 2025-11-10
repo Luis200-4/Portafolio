@@ -1,0 +1,305 @@
+/* Fuentes futuristas */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-black: #0a0a0a;
+  --secondary-black: #111111;
+  --accent-red: #ff003c;
+  --accent-red-glow: #ff003c80;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-black);
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Efectos de neón y brillo */
+.neon-glow {
+  text-shadow: 0 0 10px var(--accent-red), 0 0 20px var(--accent-red), 0 0 30px var(--accent-red);
+}
+
+.glow-border {
+  border: 1px solid var(--accent-red);
+  box-shadow: 0 0 15px var(--accent-red-glow);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px var(--accent-red-glow);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff0055;
+}
+
+/* Tipografía futurista */
+.futuristic-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.futuristic-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.subir{
+
+margin-bottom:150px;
+
+}
+
+/* Utilidad para desplazar ligeramente un bloque hacia la izquierda
+   Ajusta el valor de translateX según necesites (-10px, -20px, etc.) */
+.shift-left {
+  transform: translateX(-80px);
+}
+
+/* Projects interactive styles */
+.project-filter .btn {
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-weight: 600;
+}
+
+.project-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 12px;
+}
+.project-card:hover {
+  transform: translateY(-6px) translateX(-6px);
+  box-shadow: 0 10px 30px rgba(255, 0, 60, 0.12);
+}
+
+/* Footer styles: softer, rounded and matching color palette */
+.site-footer {
+  background: linear-gradient(180deg, rgba(17,17,17,0.6), rgba(10,10,10,0.9));
+  border-top: 1px solid rgba(255,0,60,0.08);
+  padding: 28px 0;
+  /* Make footer text more readable on dark background */
+  color: var(--text-primary);
+}
+.site-footer .footer-icon {
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,0,60,0.06);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.site-footer .footer-icon:hover {
+  transform: translateY(-3px);
+  background: rgba(255,0,60,0.12);
+}
+
+/* Make small / muted text in footer visible while keeping a softer tone */
+.site-footer .small,
+.site-footer .text-muted {
+  color: rgba(255,255,255,0.95);
+}
+
+.site-footer .text-center.small {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: rgba(255,255,255,0.98);
+}
+
+/* Ensure links in footer have good contrast */
+.site-footer a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: var(--accent-red);
+  text-decoration: underline;
+}
+
+/* Ensure prominent footer typography for readability */
+.site-footer .futuristic-title {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+.site-footer .futuristic-text {
+  color: rgba(255,255,255,0.95);
+}
+
+/* Responsive: avoid shifting on small screens */
+@media (max-width: 768px) {
+  .shift-left { transform: none; }
+  .project-card:hover { transform: translateY(-4px); }
+  .project-filter { gap: 6px; }
+}
+
+/* Contact section styles */
+.contact-section {
+  background: linear-gradient(180deg, rgba(17,17,17,0.4), rgba(10,10,10,0.7));
+}
+.contact-card {
+  border-radius: 12px;
+  border: 1px solid rgba(255,0,60,0.06);
+  backdrop-filter: blur(6px);
+  position: relative;
+}
+.contact-input {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,0,60,0.06);
+  /* Default: white text (before hover/focus). On hover/focus it will turn dark. */
+  color: var(--text-primary) !important;
+  transition: color 0.18s ease;
+}
+.contact-input:focus {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 12px rgba(255,0,60,0.08);
+}
+
+/* Placeholder styles for better contrast when inputs use dark text */
+.contact-input::placeholder {
+  color: rgba(255,255,255,0.6);
+  transition: color 0.18s ease;
+}
+
+/* On hover/focus make the typed text and placeholder dark for readability while typing */
+.contact-input:hover,
+.contact-input:focus,
+.contact-card .form-control:hover,
+.contact-card .form-control:focus,
+.contact-card textarea:hover,
+.contact-card textarea:focus,
+.contact-card input:hover,
+.contact-card input:focus {
+  color: #0a0a0a !important;
+}
+.contact-input:hover::placeholder,
+.contact-input:focus::placeholder,
+.contact-card .form-control:hover::placeholder,
+.contact-card .form-control:focus::placeholder {
+  color: rgba(10,10,10,0.5);
+}
+.send-btn {
+  background: linear-gradient(90deg, var(--accent-red), #ff5a73);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(255,0,60,0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.send-btn:hover { transform: translateY(-3px); }
+
+@media (max-width: 576px) {
+  .send-btn { width: 100%; }
+}
+
+/* Hero image */
+.hero-image-wrap { display: flex; align-items: center; justify-content: center; }
+.hero-avatar {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 2px solid rgba(255,0,60,0.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6), 0 0 18px rgba(255,0,60,0.04) inset;
+}
+
+@media (max-width: 992px) {
+  .hero-avatar { width: 260px; }
+}
+
+/* Small avatar inside contact card */
+.contact-card-avatar {
+  position: absolute;
+  top: -28px;
+  right: 18px;
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid rgba(255,0,60,0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 576px) {
+  .contact-card-avatar { display: none; }
+}
+
+/* New: left photo in contact card for md+ */
+.contact-left-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid rgba(255,0,60,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 768px) {
+  .contact-left-avatar { display: none; }
+}
+
+
+
+
+
+/* Efectos de partículas (pseudo-elementos) */
+.particle-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, var(--accent-red-glow) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, var(--accent-red-glow) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, #ff003c20 0%, transparent 50%);
+  pointer-events: none;
+}
